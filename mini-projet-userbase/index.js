@@ -160,3 +160,34 @@ let users = [
         company: "CENTURIA"
     }
 ];
+
+
+function countActiveUsers(users) {
+    let active = 0;
+    for(let user of users) {
+        if(user.isActive === true) {
+            active = active+1
+        }
+    }
+    return active
+}
+
+console.log(`We currently have ${ countActiveUsers(users) } active users.`);
+
+function getActiveUsers(users) {
+    let activeUsers = countActiveUsers(users);
+    return activeUsers;
+}
+
+function hasBlueEyes(activeUsers) {
+    
+    let blue = 0;
+    for (let activeUsers of users) {
+        if(activeUsers.eyeColor === "blue"){
+            blue = blue + 1;
+        }
+    }
+    return blue;
+}
+
+console.log(`Out of our currently ${getActiveUsers(users)} active users, ${hasBlueEyes(activeUsers)} have blue eyes.`);
