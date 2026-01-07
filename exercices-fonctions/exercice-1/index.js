@@ -35,12 +35,48 @@ console.log(mod(42, 2));
 
 function askUserOperation() {
     let operation = window.prompt(`Quelle opération souhaitez-vous faire ? (+, -, *, /, %)`);
+    return operation;
 }
 
 function askUserFirstNumber() {
     let number1 = parseInt(window.prompt(`Choisissez un premier nombre.`));
+    return number1;
 }
 
 function askUserSecondNumber() {
     let number2 = parseInt(window.prompt(`Choisissez un second nombre.`));
+    return number2;
 }
+
+function calculator() {
+    let operator = askUserOperation();
+    let number1 = askUserFirstNumber();
+    let number2 = askUserSecondNumber();
+    if(operator === "+") {
+        let result = add(number1, number2);
+        console.log(result);
+        return result;
+    }
+    else if(operator === "-") {
+        let result = sub(number1, number2);
+        console.log(result);
+        return result;
+    }
+    else if(operator === "*") {
+        let result = mult(number1, number2);
+        console.log(result);
+        return result;
+    }
+    else if(operator === "/") {
+        let result = div(number1, number2);
+        console.log(result);
+        return result;
+    }
+    else if(operator === "%") {
+        let result = mod(number1, number2);
+        console.log(result);
+        return result;
+    }
+}
+
+calculator()
