@@ -15,3 +15,7 @@ let students = [
 		average : 12
 	},
 ];
+
+for(let i=0; i<students.length; i++) {
+    console.log(`My name is ${students[i].name}, I'm ${students[i].age} years old, my average is ${students[i].average}.`);
+}
