@@ -255,3 +255,18 @@ function getBrownEyedUsers(users) {
 }
 
 let brownEyes = getBrownEyedUsers(users);
+
+function excludeCenturiaWorkers(users) {
+    let brown = 0;
+    for (let user of brownEyes) {
+        if(user.company === "CENTURIA") {
+            brownEyes.pop(user);
+        }
+    }
+    for (let user of brownEyes) {
+        brown ++;
+    }
+    return brown;
+}
+
+console.log(`${excludeCenturiaWorkers(users)} users with brown eyes do not work at CENTURIA`);
