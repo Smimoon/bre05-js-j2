@@ -166,28 +166,34 @@ function countActiveUsers(users) {
     let active = 0;
     for(let user of users) {
         if(user.isActive === true) {
-            active = active+1
+            active = active+1;
         }
     }
-    return active
+    return active;
 }
 
 console.log(`We currently have ${ countActiveUsers(users) } active users.`);
 
+
 function getActiveUsers(users) {
-    let activeUsers = countActiveUsers(users);
+    let activeUsers =[];
+    for(let user of users) {
+        if(user.isActive === true) {
+            activeUsers.push(user);
+        }
+    }
     return activeUsers;
 }
 
 function hasBlueEyes(activeUsers) {
-    activeUsers = getActiveUsers(users);
     let blue = 0;
-    for (let users of activeUsers) {
-        if(users.eyeColor === "blue"){
-            blue = blue + 1;
+    for (let user of activeUsers) {
+        if(user.eyeColor === "blue"){
+            blue++;
         }
     }
     return blue;
 }
+let activeUsers = getActiveUsers(users);
 
-console.log(`Out of our currently ${getActiveUsers(users)} active users, ${hasBlueEyes(activeUsers)} have blue eyes.`);
+console.log(`Out of our currently ${countActiveUsers(users)} active users, ${hasBlueEyes(activeUsers)} have blue eyes.`);
