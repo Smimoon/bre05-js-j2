@@ -243,3 +243,15 @@ function setMultronToCenturia(users) {
 }
 
 console.log(`${getMultronUsers(users)} user companies have been changed from MULTRON to CENTURIA.`);
+
+function getBrownEyedUsers(users) {
+    let brownEyes = [];
+    for(let user of users) {
+        if(user.eyeColor === "brown") {
+            brownEyes.push(user);
+        }
+    }
+    return brownEyes;
+}
+
+let brownEyes = getBrownEyedUsers(users);
