@@ -197,3 +197,28 @@ function hasBlueEyes(activeUsers) {
 let activeUsers = getActiveUsers(users);
 
 console.log(`Out of our currently ${countActiveUsers(users)} active users, ${hasBlueEyes(activeUsers)} have blue eyes.`);
+
+
+function getActiveUsersAges(users) {
+    let activeUsers = getActiveUsers(users);
+    let ages = [];
+    for(let user of activeUsers) {
+        ages.push(user.age);
+    }
+    return ages;
+}
+
+let ages = getActiveUsersAges(users);
+
+function computeActiveUsersAverageAge(ages) {
+     let sum = 0;
+     let div = 0;
+     for(let age of ages) {
+         sum = sum + age;
+         div++;
+     }
+     let average = sum / div;
+     return average;
+}
+
+console.log(`Out of our currently ${countActiveUsers(users)} active users, the average age is ${computeActiveUsersAverageAge(ages)}.`);
