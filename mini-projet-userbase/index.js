@@ -270,3 +270,94 @@ function excludeCenturiaWorkers(users) {
 }
 
 console.log(`${excludeCenturiaWorkers(users)} users with brown eyes do not work at CENTURIA`);
+
+
+function getActiveBrownEyedUsers(users) {
+    let active = 0;
+    for(let user of brownEyes) {
+        if(user.isActive === true) {
+            active++;
+        }
+    }
+    return active;
+}
+
+function getInactiveBrownEyedUsers(users) {
+    let inactive = 0;
+    for(let user of brownEyes) {
+        if(user.isActive === false) {
+            inactive++;
+        }
+    }
+    return inactive;
+}
+
+function getGreenEyedUsers(users) {
+    let greenEyes = [];
+    for(let user of users) {
+        if(user.eyeColor === "green") {
+            greenEyes.push(user);
+        }
+    }
+    return greenEyes;
+}
+
+let greenEyes = getGreenEyedUsers(users);
+
+function getActiveGreenEyedUsers(users) {
+    let active = 0;
+    for(let user of greenEyes) {
+        if(user.isActive === true) {
+            active++;
+        }
+    }
+    return active;
+}
+
+function getInactiveGreenEyedUsers(users) {
+    let inactive = 0;
+    for(let user of greenEyes) {
+        if(user.isActive === false) {
+            inactive++;
+        }
+    }
+    return inactive;
+}
+
+function getBlueEyedUsers(users) {
+    let blueEyes = [];
+    for(let user of users) {
+        if(user.eyeColor === "blue") {
+            blueEyes.push(user);
+        }
+    }
+    return blueEyes;
+}
+
+let blueEyes = getBlueEyedUsers(users);
+
+function getActiveBlueEyedUsers(users) {
+    let active = 0;
+    for(let user of blueEyes) {
+        if(user.isActive === true) {
+            active++;
+        }
+    }
+    return active;
+}
+
+function getInactiveBlueEyedUsers(users) {
+    let inactive = 0;
+    for(let user of blueEyes) {
+        if(user.isActive === false) {
+            inactive++;
+        }
+    }
+    return inactive;
+}
+
+console.log(`Out of our brown eyed users ${getActiveBrownEyedUsers(users)} are active and ${getInactiveBrownEyedUsers(users)} are inactive`);
+
+console.log(`Out of our green eyed users ${getActiveGreenEyedUsers(users)} are active and ${getInactiveGreenEyedUsers(users)} are inactive`);
+
+console.log(`Out of our blue eyed users ${getActiveBlueEyedUsers(users)} are active and ${getInactiveBlueEyedUsers(users)} are inactive`);
