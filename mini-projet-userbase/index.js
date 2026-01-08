@@ -222,3 +222,24 @@ function computeActiveUsersAverageAge(ages) {
 }
 
 console.log(`Out of our currently ${countActiveUsers(users)} active users, the average age is ${computeActiveUsersAverageAge(ages)}.`);
+
+
+function getMultronUsers(users) {
+    let multronUsers = 0;
+    for(let user of users) {
+        if(user.company === "MULTRON") {
+            multronUsers++;
+        }
+    }
+    return multronUsers;
+}
+
+
+function setMultronToCenturia(users) {
+    for(let user of users) {
+        if (user.company === "MULTRON")
+        user.company = "Centuria";
+    }
+}
+
+console.log(`${getMultronUsers(users)} user companies have been changed from MULTRON to CENTURIA.`);
