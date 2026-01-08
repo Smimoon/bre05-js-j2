@@ -180,10 +180,10 @@ function getActiveUsers(users) {
 }
 
 function hasBlueEyes(activeUsers) {
-    
+    activeUsers = getActiveUsers(users);
     let blue = 0;
-    for (let activeUsers of users) {
-        if(activeUsers.eyeColor === "blue"){
+    for (let users of activeUsers) {
+        if(users.eyeColor === "blue"){
             blue = blue + 1;
         }
     }
